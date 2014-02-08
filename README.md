@@ -1,9 +1,9 @@
 Youmeb-sequelize-livescript 
 ================
 
-## This project fork from Youmeb-sequelize and change it templates to livescript  
 Youmeb-sequelize is a YouMebJS package which will help you communicate with your MySQL DB by sequelize ORM .If you want to use sequelize, you only use `$sequlize`. It will inject `sequelize` function to your applications.You `DON'T NEED TO WRITE` require sequelize in every YouMeb Packages or your applications.
 
+### This project fork from Youmeb-sequelize and change it's templates to livescript  
 
 
 Before you install this package, you must install :
