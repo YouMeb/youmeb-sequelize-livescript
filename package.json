@@ -1,5 +1,5 @@
 {
-  "name": "youmeb-sequelize",
+  "name": "youmeb-sequelize-livescript",
   "version": "0.0.7",
   "description": "youmeb-sequelize ================",
   "main": "index.js",

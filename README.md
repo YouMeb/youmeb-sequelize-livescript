@@ -12,7 +12,7 @@ Before you install this package, you must install :
 ## Installaction
 
 ```bash
-    $ npm install youmeb-sequelize
+    $ npm install youmeb-sequelize-livescript
 ```
 
 ## Setting Config
@@ -40,11 +40,11 @@ Edit `/config/default.json` file:
 
 You can type `youmeb --help` in your cli , and see more description:
 
-* `$ sequelize:generate:migration`:
+* `$ sequelize:generate:migration(livescript)`:
 
     Generate a new migration and name it, you will see a new migration file(xxxxxx-dbname.js) at `/migration/`. 
 
-* `$ sequelize:generate:model`:
+* `$ sequelize:generate:model(livescript)`:
 
     Generate a new model schema and name it, you will see a new model schema file(dbname.js) at `/models/`.
 
