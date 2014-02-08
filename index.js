@@ -18,8 +18,8 @@ var Sequelize = require('sequelize');
 module.exports = function ($youmeb, $injector, $config, $generator, $prompt) {
 
   $youmeb.on('help', function (command, data, done) {
-    data.commands.push(['sequelize:generate:model', '', 'Generates a sequelize model']);
-    data.commands.push(['sequelize:generate:migration', '', 'Generates a sequelize migration']);
+    data.commands.push(['sequelize:generate:model', '', 'Generates a sequelize model(Livescript)']);
+    data.commands.push(['sequelize:generate:migration', '', 'Generates a sequelize migration(Livescript)']);
     data.commands.push(['sequelize:migrate', '', '']);
     data.commands.push(['sequelize:migrate-undo', '', '']);
     done();
@@ -122,7 +122,7 @@ module.exports = function ($youmeb, $injector, $config, $generator, $prompt) {
         return done(err);
       }
 
-      var generator = $generator.create(path.join(__dirname, 'templates'), path.join($youmeb.root, $config.get('sequelize.modelsDir') || 'models'));
+      var generator = $generator.create(path.join(__dirname, 'templates'), path.join($youmeb.root, $config.get('sequelize.modelsDir') || 'api/models'));
 
       generator.on('create', function (file) {
         console.log();
@@ -130,7 +130,7 @@ module.exports = function ($youmeb, $injector, $config, $generator, $prompt) {
         console.log();
       });
 
-      generator.createFile('./model.js', './' + result.name + '.js', {
+      generator.createFile('./model.ls', './' + result.name + '.ls', {
         name: result.name[0].toUpperCase() + result.name.substr(1)
       }, done);
     });
@@ -154,7 +154,7 @@ module.exports = function ($youmeb, $injector, $config, $generator, $prompt) {
         result.name
       ].join('-');
 
-      var generator = $generator.create(path.join(__dirname, 'templates'), path.join($youmeb.root, $config.get('sequelize.migrationsDir') || 'migrations'));
+      var generator = $generator.create(path.join(__dirname, 'templates'), path.join($youmeb.root, $config.get('sequelize.migrationsDir') || 'api/migrations'));
 
       generator.on('create', function (file) {
         console.log();
@@ -162,7 +162,7 @@ module.exports = function ($youmeb, $injector, $config, $generator, $prompt) {
         console.log();
       });
 
-      generator.createFile('./migration.js', './' + migrationName + '.js', {}, done);
+      generator.createFile('./migration.ls', './' + migrationName + '.ls', {}, done);
     });
   });
 
